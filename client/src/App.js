@@ -62,34 +62,27 @@ class App extends Component {
             sellTokens = { this.sellTokens }
             />
         }
-        return ( <
+        return ( <div
             div className = "App" >
-            <
-            div >
-            <
-            Navbar account = { this.state.account }
-            /> <
-            div className = "container-fluid mt-5" >
-            <
-            div className = "row" >
-            <
-            main role = "main"
+            <div>
+            <Navbar account = { this.state.account }/> 
+            <div className = "container-fluid mt-5" >
+            <div className = "row" >
+            <main role = "main"
             className = "col-lg-12 ml-auto mr-auto"
             style = {
                 { maxWidth: '1000px' }
             } >
-            <
-            div className = "content mr-auto ml-auto" >
+            
+            <div className = "content mr-auto ml-auto" >
 
             { content }
 
-            <
-            /div> < /
-            main > <
-            /div> < /
-            div > <
-            /div> < /
-            div >
+            </div> 
+            </main> 
+            </div> 
+            </div> Testando</div> 
+            </div >
         );
     }
 }
