@@ -120,7 +120,7 @@ contract Swap{
             return rates[_coinFrom][_coinTo] + rates[_coinFrom][_coinTo]*getPercent(_coinTo) ;
         }
         //return 1*(uint256(10)**17) + div(rates[_coinFrom][_coinTo],fee);
-        return rates[_coinFrom][_coinTo] - rates[_coinFrom][_coinTo]*getPercent(_coinTo) ;//+ div(rates[_coinFrom][_coinTo],fee);
+        return rates[_coinFrom][_coinTo] - rates[_coinFrom][_coinTo]*getPercent(_coinTo);//+ div(rates[_coinFrom][_coinTo],fee);
     }
 
     function priceCoinAt(uint index_1, uint index_2) public view returns(uint256){
@@ -131,7 +131,7 @@ contract Swap{
         uint256 percent = getPercent(coins[index_2]);
         ERC20 temp_ = ERC20(coins[index_2]);
         if (iCapital[coins[index_2]] > temp_.balanceOf(address(this))){
-            return temp + (temp*percent) ;
+            return temp + (temp*percent);
         }
         //return 1*(uint256(10)**17) + div(rates[coins[index_1]][coins[index_2]],fee);
         return temp - (temp * percent); //+ div(rates[coins[index_1]][coins[index_2]],fee);
