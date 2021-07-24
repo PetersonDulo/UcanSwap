@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import BuyForm from './BuyForm'
 import SellForm from './SellForm'
 import ADashboards from './ADashboards'
+import MarketDash from './MarketDash'
 
 class Main extends Component {
   constructor(props) {
@@ -20,6 +21,16 @@ class Main extends Component {
         buyTokens={this.props.buyTokens}
         accounts={this.props.accounts}
         contract={this.props.contract}
+        web3={this.props.web3}
+      />
+    } else if (this.state.currentForm === 'market') {
+      content = <MarketDash
+        ethBalance={this.props.ethBalance}
+        tokenBalance={this.props.tokenBalance}
+        currentForm={this}
+        accounts={this.props.accounts}
+        contract={this.props.contract}
+        web3={this.props.web3}
       />
     } else if (this.state.currentForm === 'dashboard') {
       content = <ADashboards
@@ -28,6 +39,7 @@ class Main extends Component {
         sellTokens={this.props.sellTokens}
         accounts={this.props.accounts}
         contract={this.props.contract}
+        web3={this.props.web3}
       />
     }
 
@@ -42,6 +54,15 @@ class Main extends Component {
               }}
             >
             Swap
+          </button>
+          <span className="text-muted">&lt; &nbsp; &gt;</span>
+          <button
+            className="btn btn-light"
+            onClick={(event) => {
+              this.setState({ currentForm: 'market' })
+            }}
+          >
+            Market
           </button>
           <span className="text-muted">&lt; &nbsp; &gt;</span>
           <button

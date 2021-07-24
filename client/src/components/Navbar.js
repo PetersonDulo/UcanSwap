@@ -10,7 +10,7 @@ class Navbar extends Component {
           className="navbar-brand col-sm-3 col-md-2 mr-0"
           rel="noopener noreferrer"
         >
-          EthSwap
+          TokenDé
         </span>
 
         <ul className="navbar-nav px-3">

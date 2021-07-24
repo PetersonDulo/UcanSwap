@@ -13,9 +13,9 @@ contract Coin2 is ERC20{
 
     constructor(address exchange_, string memory name_, string memory symbol_) public ERC20(name_,symbol_) {
         owner = msg.sender;
-        _mint(exchange_, 10**18);
-        _mint(msg.sender, 10**18);
-        approve(exchange_, 10**15);
+        _mint(exchange_, 1000000*(uint256(10)**18));
+        _mint(msg.sender, 1000000*(uint256(10)**18));
+        approve(exchange_, 1000000*(uint256(10)**18));
     }
 
 }
